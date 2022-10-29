@@ -14,8 +14,8 @@ from dashapp import dashapp
 from utils import explain_prediction, make_prediction
 
 classes = [
-    animal.replace("images/", "").replace("/", "")
-    for animal in glob("images/*/")
+    animal.replace("animals/", "").replace("/", "")
+    for animal in glob("animals/*/")
 ]
 models = [
     model.replace("models/", "").replace(".h5", "")
@@ -39,7 +39,7 @@ SIDEBAR_STYLE = {
 
 sidebar_main = html.Div(
     [
-        html.H4("Animal vision tool"),
+        html.H4("Animal vision tool", style={"margin-top": "10px"}),
         html.Hr(),
         dcc.Upload(
             id="upload-image",
@@ -127,8 +127,6 @@ def parse_contents(contents, jpeg=True):
         data = contents.replace("data:image/png;base64,", "")
     img = Image.open(io.BytesIO(base64.b64decode(data)))
 
-    # Convert the image string to numpy array and create a
-    # Plotly figure, see https://plotly.com/python/imshow/
     fig = px.imshow(np.array(img))
 
     # Hide the axes and the tooltips

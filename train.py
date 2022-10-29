@@ -66,7 +66,7 @@ def main(model_path="animal_classification_model.h5"):
     INPUT_SHAPE = (224, 224, 3)
     BASE_MODEL = tf.keras.applications.EfficientNetB0(include_top=False)
 
-    train_data = create_data_loaders(train_dir="images")
+    train_data = create_data_loaders(train_dir="animals")
     model = create_model(
         input_shape=INPUT_SHAPE,
         base_model=BASE_MODEL,
@@ -74,7 +74,6 @@ def main(model_path="animal_classification_model.h5"):
     )
 
     model.fit(train_data, epochs=4, steps_per_epoch=len(train_data))
-
     model.save("models/" + model_path)
 
 

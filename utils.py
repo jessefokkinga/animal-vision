@@ -21,6 +21,7 @@ def make_prediction(image, model, class_names):
     model = keras.models.load_model("models/" + model + ".h5")
 
     preds = model.predict(image)
+    print(preds)
     pred_class = class_names[tf.argmax(preds[0])]
     pred_conf = int(tf.reduce_max(preds[0]) * 100)
 
@@ -71,7 +72,7 @@ def explain_prediction(model, img, classes, top_preds_count):
     for i, (index, value, name, ax) in enumerate(
         zip(top_preds_indexes, top_preds_values, top_preds_names, axes.flat)
     ):
-        temp, mask = explanation.get_image_and_mask(
+        tmp, mask = explanation.get_image_and_mask(
             explanation.top_labels[i],
             positive_only=False,
             num_features=3,
@@ -79,14 +80,13 @@ def explain_prediction(model, img, classes, top_preds_count):
             min_weight=1 / 25,
         )
 
-        ax.imshow(mark_boundaries(temp / 255, mask))
+        ax.imshow(mark_boundaries(tmp / 255, mask))
 
     fig = fig_to_uri(fig)
     return fig
 
 
 def fig_to_uri(in_fig, close_all=True, **save_args):
-
     out_img = BytesIO()
     in_fig.savefig(out_img, format="png", **save_args)
     if close_all:
