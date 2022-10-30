@@ -30,11 +30,8 @@ python main.py
 
 ### Example screenshots
 
-<p float="left">
-    <img src="img/example_bee.png" alt="Example: bee" width="240"/>
-    <img src="img/example_fox.png" alt="Example: fox" width="240"/>
-    <img src="img/example_hornbill.png" alt="Example: hornbill" width="240"/>
-</p>
+<img src="img/example_bee.png" width="240"/> <img src="img/example_fox.png" width="240"/>
+<img src="img/example_hornbill.png" alt="Example: hornbill" width="240"/>
 
 
 ### References
