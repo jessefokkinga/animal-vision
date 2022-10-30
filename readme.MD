@@ -30,8 +30,8 @@ python main.py
 
 ### Example screenshots
 
-<img src="img/example_bee.png" width="240"/> <img src="img/example_fox.png" width="240"/>
-<img src="img/example_hornbill.png" alt="Example: hornbill" width="240"/>
+<img src="img/example_bee.png" width="260"/> <img src="img/example_fox.png" width="260"/>
+<img src="img/example_hornbill.png" alt="Example: hornbill" width="260"/>
 
 
 ### References
