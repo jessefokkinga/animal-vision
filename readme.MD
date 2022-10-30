@@ -1,6 +1,6 @@
 ### Animal vision 
 
-This repo contains code to (i) train a computer vision model that can recognise animals in pictures and (ii) a web application that uses this model to generate prediction for new pictures and utilises *explainable machine learning* to get some indication on why our model generated this prediction. 
+This repo contains code to (i) train a computer vision model that can recognise animals in pictures and (ii) a web application that uses this model to generate prediction for new pictures and utilises *explainable machine learning* to get an indication on why our model generated a certain prediction. 
 
 The model is based on EfficientNet and is finetuned on a small dataset with animal photos (i.e., we apply transfer learning). To set up the web application, the Dash framework is used. Lastly, the predictions are explained using local interpretable model-agnostic explanations (LIME). In the web application, the areas that the model relies on the most to generate its prediction are highlighted in green.  
 
@@ -30,9 +30,12 @@ python main.py
 
 ### Example screenshots
 
-<img src="img/example_bee.png" alt="Example: bee" width="300"/>
-<img src="img/example_fox.png" alt="Example: fox" width="300"/>
-<img src="img/example_hornbill.png" alt="Example: hornbill" width="300"/>
+<p float="left">
+    <img src="img/example_bee.png" alt="Example: bee" width="240"/>
+    <img src="img/example_fox.png" alt="Example: fox" width="240"/>
+    <img src="img/example_hornbill.png" alt="Example: hornbill" width="240"/>
+</p>
+
 
 ### References
 
